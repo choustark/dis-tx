@@ -1,0 +1,9 @@
+spring:
+  profiles:
+    active: dev
+#  cloud:
+#    gateway:
+#      discovery:
+#        locator:
+#          enabled: true
+#          lower-case-service-id: true
