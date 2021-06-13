@@ -82,6 +82,7 @@ public class UserController {
     @PostMapping("/update/deposit")
     ResponseData<Boolean> updateUserDeposit(@RequestBody UserPo po) {
         log.info("修改的值={}",testInfo);
+        int i = 100 / 0;
         iUserService.updateUserDeposit(po);
         return ResponseDataBuilder.buildSuccessData(true);
     }

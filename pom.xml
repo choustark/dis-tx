@@ -34,6 +34,7 @@
         <springcloud.version>Greenwich.SR4</springcloud.version>
         <opendFeign.version>2.1.5.RELEASE</opendFeign.version>
         <springcloudalibaba.version>2.1.0.RELEASE</springcloudalibaba.version>
+        <springboot.amqp.version>2.1.8.RELEASE</springboot.amqp.version>
     </properties>
     <modules>
         <module>order_module</module>
@@ -41,6 +42,7 @@
         <module>common_module</module>
         <module>gateway_module</module>
         <module>uc-inteface</module>
+        <module>mq-pack</module>
     </modules>
     <dependencyManagement>
         <dependencies>
@@ -122,6 +124,11 @@
                 <version>${springcloudalibaba.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-amqp</artifactId>
+                <version>${springboot.amqp.version}</version>
             </dependency>
         </dependencies>
 
