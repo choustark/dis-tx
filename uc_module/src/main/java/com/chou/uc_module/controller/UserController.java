@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.*;
 import com.chou.common_module.context.ResponseData;
 import com.chou.common_module.context.ResponseDataBuilder;
 
+import java.util.concurrent.TimeUnit;
+
 
 /**
  * <p>
@@ -80,10 +82,11 @@ public class UserController {
     }
 
     @PostMapping("/update/deposit")
-    ResponseData<Boolean> updateUserDeposit(@RequestBody UserPo po) {
+    ResponseData<Boolean> updateUserDeposit(@RequestBody UserPo po) throws InterruptedException {
         log.info("修改的值={}",testInfo);
-        int i = 100 / 0;
+        TimeUnit.SECONDS.sleep(5);
         iUserService.updateUserDeposit(po);
+        log.info("更新余额成功！！！");
         return ResponseDataBuilder.buildSuccessData(true);
     }
 
@@ -96,7 +99,5 @@ public class UserController {
     public ResponseData<Boolean> deleteUser(@RequestParam Long id) {
         return ResponseDataBuilder.buildSuccessData(iUserService.delete(id));
     }
-
-
 }
 

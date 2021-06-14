@@ -9,7 +9,9 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <groupId>com.chou</groupId>
     <artifactId>mq-pack</artifactId>
+    <version>0.0.1</version>
 
     <dependencies>
         <dependency>

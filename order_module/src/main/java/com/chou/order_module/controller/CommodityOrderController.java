@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.chou.order_module.po.CommodityOrderPo;
 import com.chou.order_module.po.SearchCommodityOrderPo;
 import com.chou.order_module.service.ICommodityOrderService;
+import com.chou.order_module.service.impl.MQOrderService;
 import com.chou.order_module.vo.CommodityOrderVO;
 
 import com.chou.uc_module.UserApi;
@@ -29,6 +30,9 @@ import com.chou.common_module.context.ResponseDataBuilder;
 public class CommodityOrderController {
         @Autowired
         private ICommodityOrderService iCommodityOrderService;
+
+        @Autowired
+        private MQOrderService mqOrderService;
 
         @Autowired
         private UserApi userApi;
@@ -64,6 +68,19 @@ public class CommodityOrderController {
             }
             return ResponseDataBuilder.buildSuccessData(true);
         }
+
+    /**
+     * 新增 CommodityOrder
+     * @param po
+     */
+    @PostMapping("/add1")
+    public ResponseData<Boolean> addCommodityOrder1(@RequestBody CommodityOrderPo po){
+        mqOrderService.addCommodityOrder(po);
+        Boolean aBoolean = iCommodityOrderService.addCommodityOrder(po);
+        // 采用消息通知的方式更新解决用户余额问题，解决分布式事务的带来的问题
+
+        return ResponseDataBuilder.buildSuccessData(true);
+    }
 
         /**
          * 详情查询 CommodityOrder

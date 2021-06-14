@@ -60,6 +60,11 @@
             <artifactId>common_module</artifactId>
             <version>0.0.2</version>
         </dependency>
+        <dependency>
+            <groupId>com.chou</groupId>
+            <artifactId>mq-pack</artifactId>
+            <version>0.0.1</version>
+        </dependency>
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>

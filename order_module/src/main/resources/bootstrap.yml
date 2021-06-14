@@ -17,16 +17,5 @@ spring:
         file-extension: yaml
         namespace: c51e147e-41a3-407e-af4a-9f30c0bf6b12
         group: dev
-  rabbitmq:
-    host:
-    port:
-    username:
-    password:
-    # 开启发送确认
-    publisher-confirms: true
-    publisher-returns: true
-    template:
-      retry:
-        initial-interval:
-        enabled: true
+
 
