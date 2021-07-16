@@ -1,6 +1,9 @@
 package com.chou.amqp.config;
 
+import com.chou.amqp.constant.ExchangeConstant;
+import com.chou.amqp.constant.QueueConstant;
 import org.springframework.amqp.core.*;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -14,15 +17,18 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class DirectRabbitConfig {
 
+        @Bean
         public Queue updateDepositQueue(){
-            return new Queue("order.update.deposit",true,false,false);
+            return new Queue(QueueConstant.ORDER_UPDATE_DEPOSIT,true,false,false);
         }
 
+        @Bean
         public Exchange updateDepositExchange(){
-            return new DirectExchange("order.update.deposit.exchange",true,false);
+            return new DirectExchange(ExchangeConstant.ORDER_UPDATE_DEPOSIT_EXCHANGE,true,false);
         }
 
+        @Bean
         public Binding updateDepositBinding(){
-            return BindingBuilder.bind(updateDepositQueue()).to(updateDepositExchange()).with("order.update.deposit").noargs();
+            return BindingBuilder.bind(updateDepositQueue()).to(updateDepositExchange()).with(QueueConstant.ORDER_UPDATE_DEPOSIT).noargs();
         }
 }

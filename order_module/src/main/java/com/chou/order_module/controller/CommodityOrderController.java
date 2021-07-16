@@ -2,10 +2,13 @@ package com.chou.order_module.controller;
 
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.chou.amqp.entity.UpdateDepositMsg;
 import com.chou.order_module.po.CommodityOrderPo;
+import com.chou.order_module.po.MsgLogPO;
 import com.chou.order_module.po.SearchCommodityOrderPo;
 import com.chou.order_module.service.ICommodityOrderService;
-import com.chou.order_module.service.impl.MQOrderService;
+import com.chou.order_module.mq.MQOrderSendMsgService;
+import com.chou.order_module.service.MqMsgLogService;
 import com.chou.order_module.vo.CommodityOrderVO;
 
 import com.chou.uc_module.UserApi;
@@ -32,7 +35,10 @@ public class CommodityOrderController {
         private ICommodityOrderService iCommodityOrderService;
 
         @Autowired
-        private MQOrderService mqOrderService;
+        private MQOrderSendMsgService mqOrderService;
+
+        @Autowired
+        private MqMsgLogService mqMsgLogService;
 
         @Autowired
         private UserApi userApi;
@@ -74,10 +80,16 @@ public class CommodityOrderController {
      * @param po
      */
     @PostMapping("/add1")
+    @Transactional(rollbackFor = Exception.class)
     public ResponseData<Boolean> addCommodityOrder1(@RequestBody CommodityOrderPo po){
-        mqOrderService.addCommodityOrder(po);
-        Boolean aBoolean = iCommodityOrderService.addCommodityOrder(po);
+        iCommodityOrderService.addCommodityOrder(po);
+        // 插入消息记录表
+        MsgLogPO entity = new MsgLogPO();
+        mqMsgLogService.addMsgLog(entity);
         // 采用消息通知的方式更新解决用户余额问题，解决分布式事务的带来的问题
+        UpdateDepositMsg msg = new UpdateDepositMsg();
+
+        mqOrderService.updateUserDep(msg);
 
         return ResponseDataBuilder.buildSuccessData(true);
     }

@@ -9,20 +9,24 @@ import com.baomidou.mybatisplus.generator.config.converts.MySqlTypeConvert;
 import com.baomidou.mybatisplus.generator.config.po.TableField;
 import com.baomidou.mybatisplus.generator.config.rules.IColumnType;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
+import com.chou.codegenerator_module.config.MyGeneratorInjectionConfig;
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 public class CodeGeneratorModuleApplicationTests {
 
+    public final  static String path = "C:\\Users\\Axel\\Desktop";
+
     @Test
      public void contextLoads() {
+
         AutoGenerator ag = new AutoGenerator();
 
         //»´æ÷≈‰÷√
         GlobalConfig globalCfg = new GlobalConfig();
         globalCfg.setActiveRecord(false);
-        globalCfg.setOutputDir("C:\\Users\\Axel\\Desktop");
+        globalCfg.setOutputDir(path);
         globalCfg.setAuthor("Chou");
         globalCfg.setBaseResultMap(true);
         globalCfg.setIdType(IdType.ID_WORKER);
@@ -72,7 +76,13 @@ public class CodeGeneratorModuleApplicationTests {
         //strategyCfg.setEntityTableFieldAnnotationEnable(true);
         strategyCfg.setRestControllerStyle(true);
         ag.setStrategy(strategyCfg);
-        ag.execute();
+
+       MyGeneratorInjectionConfig myGeneratorInjectionConfig = new MyGeneratorInjectionConfig(path);
+       ag.setCfg(myGeneratorInjectionConfig);
+       ag.execute();
+
+
+
     }
 
 }

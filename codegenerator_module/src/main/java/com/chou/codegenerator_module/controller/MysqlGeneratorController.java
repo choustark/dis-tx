@@ -9,6 +9,7 @@ import com.baomidou.mybatisplus.generator.config.converts.MySqlTypeConvert;
 import com.baomidou.mybatisplus.generator.config.po.TableField;
 import com.baomidou.mybatisplus.generator.config.rules.IColumnType;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
+import com.chou.codegenerator_module.config.MyGeneratorInjectionConfig;
 import com.chou.codegenerator_module.po.GeneratorPo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -86,14 +87,9 @@ public class MysqlGeneratorController {
         strategyCfg.setRestControllerStyle(true);
         ag.setStrategy(strategyCfg);
 
-        InjectionConfig icf = new InjectionConfig() {
-            @Override
-            public void initMap() {
-                HashMap<String,Object> map = new HashMap<>();
-                map.put("",this.prepareObjectMap(map));
-                this.setMap(map);
-            }
-        };
+        MyGeneratorInjectionConfig myGeneratorInjectionConfig = new MyGeneratorInjectionConfig();
+        ag.setCfg(myGeneratorInjectionConfig);
+        // 注入配置
         ag.execute();
     }
 }
