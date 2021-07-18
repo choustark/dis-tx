@@ -23,6 +23,7 @@ open class ${table.serviceImplName} : ${superServiceImplClass}<${table.mapperNam
 public class ${table.serviceImplName} extends ${superServiceImplClass}<${table.mapperName}, ${entity}> implements ${table.serviceName} {
 
         public IPage<${entity}VO> getPage(Search${entity}Po po,Integer pageNo,Integer pageSize){
+
             return null;
         }
 

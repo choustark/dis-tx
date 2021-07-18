@@ -2,7 +2,9 @@ package com.chou.order_module.domain.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
+
 import java.io.Serializable;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -23,7 +25,7 @@ public class CommodityOrder implements Serializable {
     /**
      * id
      */
-    @TableId(value = "id", type = IdType.ID_WORKER)
+    @TableId(value = "id" , type = IdType.ID_WORKER)
     private Long id;
 
     /**

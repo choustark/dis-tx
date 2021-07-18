@@ -69,22 +69,22 @@ public class ${entity} implements Serializable {
 #if(${field.keyFlag})
 ## 主键
   #if(${field.keyIdentityFlag})
-    @TableId(value = "${field.annotationColumnName}", type = IdType.AUTO)
+@TableId(value = "${field.comment}", type = IdType.AUTO)
   #elseif(!$null.isNull(${idType}) && "$!idType" != "")
-    @TableId(value = "${field.annotationColumnName}", type = IdType.${idType})
+@TableId(value = "${field.comment}", type = IdType.${idType})
   #elseif(${field.convert})
-    @TableId("${field.annotationColumnName}")
+@TableId("${field.comment}")
   #end
 ## 普通字段
 #elseif(${field.fill})
 ## -----   存在字段填充设置   -----
   #if(${field.convert})
-    @TableField(value = "${field.annotationColumnName}", fill = FieldFill.${field.fill})
+    @TableField(value = "${field.comment}", fill = FieldFill.${field.fill})
   #else
     @TableField(fill = FieldFill.${field.fill})
   #end
 #elseif(${field.convert})
-    @TableField("${field.annotationColumnName}")
+    @TableField("${field.comment}")
 #end
 ## 乐观锁注解
 #if(${field.versionField})
