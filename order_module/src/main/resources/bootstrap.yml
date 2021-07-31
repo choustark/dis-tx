@@ -37,5 +37,8 @@ spring:
           initial-interval: 1000
     template:
       mandatory: true
+#  banner:
+#    image:
+#      location: banner.jpg
 
 

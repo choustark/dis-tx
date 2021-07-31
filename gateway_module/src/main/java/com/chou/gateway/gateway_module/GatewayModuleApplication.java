@@ -11,5 +11,4 @@ public class GatewayModuleApplication {
     public static void main(String[] args) {
         SpringApplication.run(GatewayModuleApplication.class, args);
     }
-
 }
