@@ -19,6 +19,8 @@ import org.springframework.web.bind.annotation.*;
 import com.chou.common_module.context.ResponseData;
 import com.chou.common_module.context.ResponseDataBuilder;
 
+import java.util.concurrent.Executors;
+
 
 /**
  * <p>
@@ -88,7 +90,9 @@ public class CommodityOrderController {
         mqMsgLogService.addMsgLog(entity);
         // 采用消息通知的方式更新解决用户余额问题，解决分布式事务的带来的问题
         UpdateDepositMsg msg = new UpdateDepositMsg();
-
+        msg.setUserId(po.getUserId());
+        msg.setUserName(po.getUserId());
+        msg.setDeposit(po.getAmount());
         mqOrderService.updateUserDep(msg);
 
         return ResponseDataBuilder.buildSuccessData(true);

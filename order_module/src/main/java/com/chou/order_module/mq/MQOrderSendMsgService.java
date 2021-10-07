@@ -34,7 +34,8 @@ public class MQOrderSendMsgService implements RabbitTemplate.ConfirmCallback {
         UpdateDepositMsg updateDepositMsg = new UpdateDepositMsg();
         CorrelationData correlationData = new CorrelationData();
         correlationData.setId(String.valueOf(idWorker.nextId()));
-        rabbitTemplate.convertAndSend(ExchangeConstant.ORDER_UPDATE_DEPOSIT_EXCHANGE, QueueConstant.ORDER_UPDATE_DEPOSIT,updateDepositMsg,correlationData);
+        rabbitTemplate.convertAndSend(ExchangeConstant.ORDER_UPDATE_DEPOSIT_EXCHANGE,
+                QueueConstant.ORDER_UPDATE_DEPOSIT,updateDepositMsg,correlationData);
     }
 
     // 重写消息确认送达接口

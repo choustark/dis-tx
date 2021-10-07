@@ -19,11 +19,11 @@ public class UpdateDepositMsg extends Message {
     /**
      * 用户id
      */
-    private  Long id;
+    private  Long userId;
     /**
      * 用户名称
      */
-    private Long usrName;
+    private Long userName;
 
     /**
      * 价格
