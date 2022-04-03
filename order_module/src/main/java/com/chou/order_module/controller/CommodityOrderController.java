@@ -81,9 +81,9 @@ public class CommodityOrderController {
      * 新增 CommodityOrder
      * @param po
      */
-    @PostMapping("/add1")
+    @PostMapping("/distributeAdd")
     @Transactional(rollbackFor = Exception.class)
-    public ResponseData<Boolean> addCommodityOrder1(@RequestBody CommodityOrderPo po){
+    public ResponseData<Boolean> disAddCommodityOrder(@RequestBody CommodityOrderPo po){
         iCommodityOrderService.addCommodityOrder(po);
         // 插入消息记录表
         MsgLogPO entity = new MsgLogPO();
