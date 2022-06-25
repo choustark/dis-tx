@@ -30,11 +30,10 @@ public class TxThreadPoolExecutorUtils{
     private static final ThreadFactory threadFactory = Executors.defaultThreadFactory();
     // executor
     private static ExecutorService executor = null;
-    // 队列达到最大值时的拒绝策略
-    private static RejectedExecutionHandler handler = null;
 
     static {
-        handler = new TxThreadPoolExecutorUtils.RejectHandler();
+        // 队列达到最大值时的拒绝策略
+        RejectedExecutionHandler handler = new RejectHandler();
         executor = new ThreadPoolExecutor(corePoolSize, maxPoolSize, 1000, TimeUnit.SECONDS, queue, threadFactory, handler);
     }
 
@@ -72,13 +71,13 @@ public class TxThreadPoolExecutorUtils{
 
     /**
      *  自定义线程池参数
-     * @param corePool
-     * @param maxPoolSize
-     * @param keepLive
-     * @param unit
-     * @param queue
-     * @param threadFactory
-     * @param handler
+     * @param corePool 核心线程数量
+     * @param maxPoolSize 线程池中最大可以持有多少线程
+     * @param keepLive 存活时间
+     * @param unit  存活时间单位
+     * @param queue 延迟队列
+     * @param threadFactory 线程工厂
+     * @param handler 队列满时处理策略
      * @return
      */
     public static ExecutorService newTreadThreadPool(int corePool,

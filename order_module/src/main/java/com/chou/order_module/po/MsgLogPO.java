@@ -3,6 +3,7 @@ package com.chou.order_module.po;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
+import lombok.experimental.Accessors;
 
 import java.util.Date;
 
@@ -16,6 +17,7 @@ import java.util.Date;
 @Data
 @EqualsAndHashCode
 @ToString
+@Accessors
 public class MsgLogPO {
     /**
      * id

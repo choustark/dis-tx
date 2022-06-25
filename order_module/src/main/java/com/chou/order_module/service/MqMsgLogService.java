@@ -12,5 +12,8 @@ import com.chou.order_module.po.MsgLogPO;
  * @Version 1.0
  */
 public interface MqMsgLogService extends IService<MqMsgLog> {
-    void addMsgLog(MsgLogPO po);
+
+    void addMsgLog(MqMsgLog log );
+
+    void updateMsgByCondition(MqMsgLog log);
 }

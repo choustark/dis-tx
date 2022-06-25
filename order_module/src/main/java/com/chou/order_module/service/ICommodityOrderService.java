@@ -27,4 +27,5 @@ public interface ICommodityOrderService extends IService<CommodityOrder> {
 
         Boolean delete(Long id);
 
+        Boolean  addDisCommodityOrder(CommodityOrderPo po);
 }

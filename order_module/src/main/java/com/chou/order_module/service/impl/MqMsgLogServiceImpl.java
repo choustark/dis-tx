@@ -18,6 +18,12 @@ import org.springframework.stereotype.Service;
 @Service("mqMsgLogService")
 public class MqMsgLogServiceImpl extends ServiceImpl<MqMsgLogMapper, MqMsgLog> implements MqMsgLogService {
     @Override
-    public void addMsgLog(MsgLogPO po) {
+    public void addMsgLog(MqMsgLog log) {
+        int insert = getBaseMapper().insert(log);
+    }
+
+    @Override
+    public void updateMsgByCondition(MqMsgLog log) {
+
     }
 }

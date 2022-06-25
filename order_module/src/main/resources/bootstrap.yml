@@ -17,28 +17,3 @@ spring:
         file-extension: yaml
         namespace: c51e147e-41a3-407e-af4a-9f30c0bf6b12
         group: dev
-  # mq相关配置
-  rabbitmq:
-    host: 192.168.68.115
-    port: 5672
-    username: admin
-    password: admin
-    virtual-host: /
-    # 开启发送确认
-    publisher-confirms: true
-    publisher-returns: true
-    listener:
-      simple:
-        acknowledge-mode: manual
-        retry:
-          enabled: true
-          max-attempts: 4
-          multiplier: 1.0
-          initial-interval: 1000
-    template:
-      mandatory: true
-#  banner:
-#    image:
-#      location: banner.jpg
-
-

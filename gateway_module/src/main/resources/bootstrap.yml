@@ -4,14 +4,15 @@ server:
     context-path: /api
 # nacos 相关配置
 spring:
+  application:
+    name: gateway-service
   cloud:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848 # nacos 注册中心地址
-        namespace: cdb60690-297b-42d1-aa90-0b1f7ea58f48
+        #namespace: cdb60690-297b-42d1-aa90-0b1f7ea58f48
       config:
         server-addr: 127.0.0.1:8848 # nacos 配置中心地址
         file-extension: yaml
-        namespace: cdb60690-297b-42d1-aa90-0b1f7ea58f48
-  application:
-    name: gateway-service
+        namespace: 3e6ad6d3-b7c5-4422-8965-0555df748291
+

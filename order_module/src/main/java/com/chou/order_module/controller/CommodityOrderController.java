@@ -37,12 +37,6 @@ public class CommodityOrderController {
         private ICommodityOrderService iCommodityOrderService;
 
         @Autowired
-        private MQOrderSendMsgService mqOrderService;
-
-        @Autowired
-        private MqMsgLogService mqMsgLogService;
-
-        @Autowired
         private UserApi userApi;
 
         /**
@@ -82,19 +76,8 @@ public class CommodityOrderController {
      * @param po
      */
     @PostMapping("/distributeAdd")
-    @Transactional(rollbackFor = Exception.class)
     public ResponseData<Boolean> disAddCommodityOrder(@RequestBody CommodityOrderPo po){
-        iCommodityOrderService.addCommodityOrder(po);
-        // 插入消息记录表
-        MsgLogPO entity = new MsgLogPO();
-        mqMsgLogService.addMsgLog(entity);
-        // 采用消息通知的方式更新解决用户余额问题，解决分布式事务的带来的问题
-        UpdateDepositMsg msg = new UpdateDepositMsg();
-        msg.setUserId(po.getUserId());
-        msg.setUserName(po.getUserId());
-        msg.setDeposit(po.getAmount());
-        mqOrderService.updateUserDep(msg);
-
+        iCommodityOrderService.addDisCommodityOrder(po);
         return ResponseDataBuilder.buildSuccessData(true);
     }
 

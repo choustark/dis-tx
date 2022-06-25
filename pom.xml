@@ -34,7 +34,6 @@
         <springcloud.version>Greenwich.SR4</springcloud.version>
         <opendFeign.version>2.1.5.RELEASE</opendFeign.version>
         <springcloudalibaba.version>2.1.0.RELEASE</springcloudalibaba.version>
-        <springboot.amqp.version>2.1.8.RELEASE</springboot.amqp.version>
     </properties>
     <modules>
         <module>order_module</module>
@@ -61,6 +60,18 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-actuator</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-test</artifactId>
+                <version>${test.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-security</artifactId>
                 <version>${spring-boot.version}</version>
             </dependency>
             <!-- mybatis-plus  -->
@@ -106,11 +117,7 @@
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
             </dependency>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-test</artifactId>
-                <version>${test.version}</version>
-            </dependency>
+
 
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
@@ -128,11 +135,14 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-amqp</artifactId>
-                <version>${springboot.amqp.version}</version>
+                <version>${spring-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.rocketmq</groupId>
+                <artifactId>rocketmq-spring-boot-starter</artifactId>
+                <version>2.2.2</version>
             </dependency>
         </dependencies>
-
-
     </dependencyManagement>
     <build>
         <plugins>
