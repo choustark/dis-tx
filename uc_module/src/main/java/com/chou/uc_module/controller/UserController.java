@@ -7,6 +7,7 @@ import com.chou.uc_module.po.UserPo;
 import com.chou.uc_module.service.IUserService;
 import com.chou.uc_module.vo.UserVO;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
@@ -48,6 +49,7 @@ public class UserController {
                                                    @RequestParam(name = "pagNo", defaultValue = "1") Integer pageNo,
                                                    @RequestParam(name = "pageSize", defaultValue = "10") Integer pageSize) {
         IPage<UserVO> voPage = iUserService.getPage(po, pageNo, pageSize);
+//        BeanUtils.copyProperties();
         return ResponseDataBuilder.buildSuccessData(voPage);
     }
 

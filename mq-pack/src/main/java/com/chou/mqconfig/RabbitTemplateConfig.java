@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * @ClassName RabbitTemplateConfig
- * @Description TODO
+ * @Description rabbitmq 配合类
  * @Author Axel
  * @Date 2021/6/13 22:17
  * @Version 1.0

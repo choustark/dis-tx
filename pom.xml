@@ -34,6 +34,8 @@
         <springcloud.version>Greenwich.SR4</springcloud.version>
         <opendFeign.version>2.1.5.RELEASE</opendFeign.version>
         <springcloudalibaba.version>2.1.0.RELEASE</springcloudalibaba.version>
+        <apache.poi.version>4.1.2</apache.poi.version>
+        <swagger-ui.version>3.0.0</swagger-ui.version>
     </properties>
     <modules>
         <module>order_module</module>
@@ -72,6 +74,12 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-security</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-redis</artifactId>
                 <version>${spring-boot.version}</version>
             </dependency>
             <!-- mybatis-plus  -->
@@ -125,6 +133,31 @@
                 <version>${opendFeign.version}</version>
             </dependency>
 
+            <!--swagger相关-->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-boot-starter</artifactId>
+                <version>${swagger-ui.version}</version>
+            </dependency>
+
+            <!--    poi依赖-->
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi</artifactId>
+                <version>${apache.poi.version}</version>
+            </dependency>
+            <!--    poi对于excel 2007的支持依赖-->
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml</artifactId>
+                <version>${apache.poi.version}</version>
+            </dependency>
+            <!--    poi对于excel 2007的支持依赖-->
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml-schemas</artifactId>
+                <version>${apache.poi.version}</version>
+            </dependency>
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
                 <artifactId>spring-cloud-alibaba-dependencies</artifactId>
