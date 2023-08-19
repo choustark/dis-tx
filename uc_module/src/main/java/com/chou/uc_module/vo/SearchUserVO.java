@@ -1,4 +1,6 @@
-package com.chou.uc_module.po;
+package com.chou.uc_module.vo;
+
+import lombok.Data;
 
 /**
  * @ClassName SearchUserPo
@@ -7,6 +9,6 @@ package com.chou.uc_module.po;
  * @Date 2021/5/16 19:28
  * @Version 1.0
  */
-
-public class SearchUserPo {
+@Data
+public class SearchUserVO {
 }

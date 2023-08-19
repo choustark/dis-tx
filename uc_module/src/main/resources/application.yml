@@ -1,3 +1,15 @@
 spring:
   profiles:
     active: dev
+  redis:
+    database: 0
+    host: 192.168.0.115
+    password:
+    port: 6379
+    lettuce:
+      pool:
+        max-active: 8
+        max-wait: -1ms
+        min-idle: 0
+  resources:
+    static-locations: /static/

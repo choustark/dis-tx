@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.chou.uc_module.domain.entity.User;
 import com.chou.uc_module.mapper.UserMapper;
-import com.chou.uc_module.po.SearchUserPo;
+import com.chou.uc_module.vo.SearchUserVO;
 import com.chou.uc_module.po.UserPo;
 import com.chou.uc_module.service.IUserService;
 import com.chou.uc_module.vo.UserVO;
@@ -22,7 +22,7 @@ import org.springframework.stereotype.Service;
 @Service("iUserService")
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IUserService {
 
-    public IPage<UserVO> getPage(SearchUserPo po, Integer pageNo, Integer pageSize) {
+    public IPage<UserVO> getPage(SearchUserVO po, Integer pageNo, Integer pageSize) {
         return null;
     }
 

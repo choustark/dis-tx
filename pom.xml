@@ -54,6 +54,15 @@
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${springcloudalibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-test</artifactId>
@@ -104,6 +113,8 @@
                 <artifactId>spring-boot-starter-web</artifactId>
                 <version>${spring-boot.version}</version>
             </dependency>
+
+            <!--数据库相关-->
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
@@ -120,6 +131,8 @@
                 <artifactId>druid</artifactId>
                 <version>${druid.version}</version>
             </dependency>
+
+            <!--lombok 插件-->
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
@@ -132,6 +145,7 @@
                 <artifactId>spring-cloud-starter-openfeign</artifactId>
                 <version>${opendFeign.version}</version>
             </dependency>
+
 
             <!--swagger相关-->
             <dependency>
@@ -152,19 +166,13 @@
                 <artifactId>poi-ooxml</artifactId>
                 <version>${apache.poi.version}</version>
             </dependency>
-            <!--    poi对于excel 2007的支持依赖-->
             <dependency>
                 <groupId>org.apache.poi</groupId>
                 <artifactId>poi-ooxml-schemas</artifactId>
                 <version>${apache.poi.version}</version>
             </dependency>
-            <dependency>
-                <groupId>com.alibaba.cloud</groupId>
-                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
-                <version>${springcloudalibaba.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
+
+            <!--mq 相关-->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-amqp</artifactId>

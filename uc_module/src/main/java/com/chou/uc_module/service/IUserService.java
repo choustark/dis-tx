@@ -3,7 +3,7 @@ package com.chou.uc_module.service;
 import com.chou.uc_module.domain.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.chou.uc_module.po.SearchUserPo;
+import com.chou.uc_module.vo.SearchUserVO;
 import com.chou.uc_module.po.UserPo;
 import com.chou.uc_module.vo.UserVO;
 
@@ -17,7 +17,7 @@ import com.chou.uc_module.vo.UserVO;
  */
 public interface IUserService extends IService<User> {
 
-        IPage<UserVO> getPage(SearchUserPo po, Integer pageNo, Integer pageSize);
+        IPage<UserVO> getPage(SearchUserVO po, Integer pageNo, Integer pageSize);
 
         Boolean addUser(UserPo po);
 

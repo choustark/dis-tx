@@ -4,7 +4,7 @@ import lombok.Data;
 
 /**
  * @ClassName UserPo
- * @Description TODO
+ * @Description user 持久层对象
  * @Author Axel
  * @Date 2021/5/16 19:29
  * @Version 1.0
