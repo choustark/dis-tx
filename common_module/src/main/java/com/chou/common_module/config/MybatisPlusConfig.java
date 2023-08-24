@@ -1,4 +1,4 @@
-package com.chou.uc_module.config;
+package com.chou.common_module.config;
 
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 import org.mybatis.spring.annotation.MapperScan;
@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Configuration;
  */
 
 @Configuration
-@MapperScan("com.chou.order_module.mapper")
+@MapperScan("com.chou.order_module.mapper,com.chou.uc_module.mapper")
 public class MybatisPlusConfig {
     @Bean
     public PaginationInterceptor interceptor(){

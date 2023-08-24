@@ -2,6 +2,7 @@ package com.chou.order_module.inf.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -21,7 +22,7 @@ import springfox.documentation.spring.web.plugins.Docket;
 
 @Configuration
 @EnableOpenApi
-public class SwaggerConfig {
+public class SwaggerConfig implements WebMvcConfigurer  {
 
     @Bean
     public Docket docket(){
@@ -38,13 +39,13 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("订单相关接口")
-                .description("主要陈列的是订单接口信息")
+                .title("订单模块接口")
+                .description("主要订单等接口信息")
                 .contact(new Contact("Chou.stark",
                         "https://juejin.cn/user/3245414057784158",
                         "1601459351@qq.com"))
                 .version("v1.0.0")
                 .build();
-    }
 
+    }
 }
