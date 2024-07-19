@@ -34,7 +34,6 @@
     </properties>
     <modules>
         <module>order_module</module>
-        <module>codegenerator_module</module>
         <module>common_module</module>
         <module>gateway_module</module>
         <module>uc_module</module>

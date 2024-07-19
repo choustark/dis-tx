@@ -3,9 +3,9 @@ package com.chou.uc_module.service;
 import com.chou.uc_module.domain.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.chou.uc_module.vo.SearchUserVO;
-import com.chou.uc_module.po.UserPo;
-import com.chou.uc_module.vo.UserVO;
+import com.chou.uc_module.domain.vo.SearchUserVO;
+import com.chou.uc_module.domain.po.UserPo;
+import com.chou.uc_module.domain.vo.UserVO;
 
 /**
  * <p>

@@ -1,5 +1,10 @@
 package com.chou.common_module.context;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 /**
  * @ClassName ResponseData
  * @Description api响应结果对象
@@ -8,6 +13,10 @@ package com.chou.common_module.context;
  * @Version 1.0
  */
 
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class ResponseData<T> {
     /**
      * 响应码code默认正常
@@ -25,36 +34,4 @@ public class ResponseData<T> {
      * 响应数据
      */
     private T Data;
-
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
-    public String getMsg() {
-        return msg;
-    }
-
-    public void setMsg(String msg) {
-        this.msg = msg;
-    }
-
-    public Boolean getSuccess() {
-        return success;
-    }
-
-    public void setSuccess(Boolean success) {
-        this.success = success;
-    }
-
-    public T getData() {
-        return Data;
-    }
-
-    public void setData(T data) {
-        Data = data;
-    }
 }

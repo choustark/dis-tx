@@ -3,9 +3,9 @@ package com.chou.order_module.service;
 import com.chou.order_module.domain.entity.CommodityOrder;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.chou.order_module.po.CommodityOrderPo;
-import com.chou.order_module.po.SearchCommodityOrderPo;
-import com.chou.order_module.vo.CommodityOrderVO;
+import com.chou.order_module.domain.po.CommodityOrderPo;
+import com.chou.order_module.domain.po.SearchCommodityOrderPo;
+import com.chou.order_module.domain.vo.CommodityOrderVO;
 
 /**
  * <p>

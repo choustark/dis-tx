@@ -2,7 +2,7 @@ package com.chou.uc_module.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.chou.uc_module.domain.entity.TxCompanyOrg;
-import com.chou.uc_module.vo.TxCompanyOrgVO;
+import com.chou.uc_module.domain.vo.TxCompanyOrgVO;
 
 import java.util.List;
 

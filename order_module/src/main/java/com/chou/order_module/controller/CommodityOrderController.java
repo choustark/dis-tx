@@ -2,14 +2,10 @@ package com.chou.order_module.controller;
 
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.chou.amqp.entity.UpdateDepositMsg;
-import com.chou.order_module.po.CommodityOrderPo;
-import com.chou.order_module.po.MsgLogPO;
-import com.chou.order_module.po.SearchCommodityOrderPo;
+import com.chou.order_module.domain.po.CommodityOrderPo;
+import com.chou.order_module.domain.po.SearchCommodityOrderPo;
 import com.chou.order_module.service.ICommodityOrderService;
-import com.chou.order_module.mq.MQOrderSendMsgService;
-import com.chou.order_module.service.MqMsgLogService;
-import com.chou.order_module.vo.CommodityOrderVO;
+import com.chou.order_module.domain.vo.CommodityOrderVO;
 
 import com.chou.uc_module.UserApi;
 import com.chou.uc_module.req.UpdateUseReq;
@@ -18,8 +14,6 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import com.chou.common_module.context.ResponseData;
 import com.chou.common_module.context.ResponseDataBuilder;
-
-import java.util.concurrent.Executors;
 
 
 /**

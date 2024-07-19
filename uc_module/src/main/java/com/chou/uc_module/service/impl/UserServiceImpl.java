@@ -4,10 +4,10 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.chou.uc_module.domain.entity.User;
 import com.chou.uc_module.mapper.UserMapper;
-import com.chou.uc_module.vo.SearchUserVO;
-import com.chou.uc_module.po.UserPo;
+import com.chou.uc_module.domain.vo.SearchUserVO;
+import com.chou.uc_module.domain.po.UserPo;
 import com.chou.uc_module.service.IUserService;
-import com.chou.uc_module.vo.UserVO;
+import com.chou.uc_module.domain.vo.UserVO;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 

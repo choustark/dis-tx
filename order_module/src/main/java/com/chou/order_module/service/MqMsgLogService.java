@@ -2,7 +2,6 @@ package com.chou.order_module.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.chou.order_module.domain.entity.MqMsgLog;
-import com.chou.order_module.po.MsgLogPO;
 
 /**
  * @ClassName MqMsgLogService

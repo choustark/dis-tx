@@ -5,11 +5,10 @@ import com.chou.common_module.context.ResponseDataBuilder;
 import com.chou.common_module.context.enums.CommonEnum;
 import com.chou.common_module.exception.BizException;
 import com.chou.uc_module.service.ITxCompanyOrgService;
-import com.chou.uc_module.utils.MergeCellUtils;
-import com.chou.uc_module.vo.TxCompanyOrgVO;
+import com.chou.uc_module.inf.utils.MergeCellUtils;
+import com.chou.uc_module.domain.vo.TxCompanyOrgVO;
 import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.poi.hssf.usermodel.HSSFCellStyle;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
@@ -27,7 +26,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
 import javax.servlet.ServletOutputStream;
@@ -36,12 +34,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 /**

@@ -2,7 +2,7 @@ package com.chou.uc_module.mapper;
 
 import com.chou.uc_module.domain.entity.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.chou.uc_module.po.UserPo;
+import com.chou.uc_module.domain.po.UserPo;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 

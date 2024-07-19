@@ -8,7 +8,7 @@
         <result column="user_name" property="userName" />
         <result column="deposit" property="deposit" />
     </resultMap>
-    <update id="updateUserDeposit" parameterType="com.chou.uc_module.po.UserPo">
+    <update id="updateUserDeposit" parameterType="com.chou.uc_module.domain.po.UserPo">
         update user set deposit = deposit - #{po.deposit} where id = #{po.id}
     </update>
 

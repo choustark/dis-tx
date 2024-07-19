@@ -1,14 +1,13 @@
 package com.chou.uc_module.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.chou.common_module.BaseEntity;
 import com.chou.common_module.utils.SnowflakeIdWorker;
 import com.chou.uc_module.domain.entity.TxCompanyOrg;
 import com.chou.uc_module.mapper.TxCompanyOrgMapper;
 import com.chou.uc_module.service.ITxCompanyOrgService;
-import com.chou.uc_module.vo.TxCompanyOrgVO;
+import com.chou.uc_module.domain.vo.TxCompanyOrgVO;
 import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
